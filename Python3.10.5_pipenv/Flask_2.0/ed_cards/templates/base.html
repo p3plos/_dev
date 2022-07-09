@@ -12,18 +12,13 @@
 </head>
 <body>
   <main class="wrapper">
-    {# {% block header %}
+    {% block header %}
       {% include "header.html" %}
-    {% endblock %}  #}
+    {% endblock %}
     <section class="content">
       <div class="container">
         <div class="content__main main">
           {% block content %}
-            {% if title %}
-            <h1 class="main__title">{{ title }}</h1>
-            {% else %}
-            <h1 class="main__title">Заголовок</h1>
-            {% endif %}
           {% endblock %}
         </div>
       </div>
