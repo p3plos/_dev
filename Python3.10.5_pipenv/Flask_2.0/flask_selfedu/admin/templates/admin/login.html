@@ -1,0 +1,18 @@
+{% extends "admin/base_admin.html" %}
+
+{% block content %}
+  {{ super() }}
+
+  {% for category, flash in get_flashed_messages(True) %}
+  <div class="content__flash flash_{{ category }}">{{ flash }}</div>
+  {% endfor %}
+
+  <form action="" method="post" class="content__form form">
+    <label for="user">Логин: </label>
+    <input type="text" name="user" value="" required id="user" class="form__input-email">
+    <label for="pwd">Пароль: </label>
+    <input type="password" name="pwd" value="" required id="pwd" class="form__input-pwd">
+    <input type="submit" value="Войти" class="form__button-submit">
+  </form>
+
+{% endblock %}

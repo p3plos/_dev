@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+
+  {% for category, flash in get_flashed_messages(True) %}
+  <div class="content__flash flash_{{ category }}">{{ flash }}</div>
+  {% endfor %}
+
+  <form action="" method="post" class="content__form form">
+    {{ form.hidden_tag() }} <!-- Обязательная строчка для защиты формы от CSRF атак -->
+
+    {% for field in form if field.name not in ['csrf_token', 'remember_me', 'submit'] %}
+        {{ field.label() }}
+        {% if field.errors %}
+            <span class="form__input_invalid-feedback">
+              {% for e in field.errors %}
+                  {{ e }}
+              {% endfor %}
+            </span>
+            {{ field(class="form__input_invalid") }}
+        {% else %}
+            {{ field(class="form__input")  }}
+        {% endif %}
+    {% endfor %}
+
+
+    <span> {{ form.remember_me() }} {{ form.remember_me.label(class="form__checkbox") }}</span>
+    {{ form.submit(class="form__button-submit") }}
+
+    <!--
+    <label for="email">Email: </label>
+    <input type="text" name="email" value="" required id="email" class="form__input-email">
+    <label for="pwd">Пароль: </label>
+    <input type="password" name="pwd" value="" required id="pwd" class="form__input-pwd">
+    <label for="remembermy" class="form__checkbox"><input type="checkbox" id="remembermy" name="rememberme">  Запомнить меня</label>
+    <input type="submit" value="Войти" class="form__button-submit"> -->
+
+    <hr>
+    <p><a href="{{ url_for("register") }}">Регистрация</a></p>
+  </form>
+
+{% endblock %}

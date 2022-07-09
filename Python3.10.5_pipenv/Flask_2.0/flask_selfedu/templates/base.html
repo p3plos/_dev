@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="icon" type="image/png" href="{{ url_for("static", filename="favicon.png") }}" sizes="96x96">
+
+  <link rel="stylesheet" href="{{ url_for("static", filename="css/styles.css") }}">
+  <link rel="stylesheet" media="all" href="{{ url_for("static", filename="css/media.css") }}">
+
+  {% if title %}
+    <title>Про Flask - {{ title }}</title>
+  {% else %}
+    <title>Про Flask</title>
+  {% endif %}
+</head>
+<body>
+  <main class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__main">
+          <div class="logo">Flask Selfedu</div>
+          <ul class="header__menu navbar">
+            {% for item in menu %}
+            <li class="navbar__item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    {# {% block header %}
+      {% include "header.html" %}
+    {% endblock %}  #}
+    <section class="content">
+      <div class="container">
+        <div class="content__main main">
+          {% block content %}
+            {% if title %}
+            <h1 class="main__title">{{ title }}</h1>
+            {% else %}
+            <h1 class="main__title">Про Flask</h1>
+            {% endif %}
+          {% endblock %}
+        </div>
+      </div>
+    </section>
+    {# {% block footer %}
+      {% include "footer.html" %}
+    {% endblock %}  #}
+  </main>
+</body>
+</html>

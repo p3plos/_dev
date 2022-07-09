@@ -1,0 +1,261 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../../static/fonts/Montserrat-Thin.eot");
+  src: local("☺"), url("../../../static/fonts/Montserrat-Thin.woff") format("woff"), url("../../../static/fonts/Montserrat-Thin.ttf") format("truetype"), url("../../../static/fonts/Montserrat-Thin.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../../static/fonts/Montserrat-Light.eot");
+  src: local("☺"), url("../../../static/fonts/Montserrat-Light.woff") format("woff"), url("../../../static/fonts/Montserrat-Light.ttf") format("truetype"), url("../../../static/fonts/Montserrat-Light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../../static/fonts/Montserrat-Regular.eot");
+  src: local("☺"), url("../../../static/fonts/Montserrat-Regular.woff") format("woff"), url("../../../static/fonts/Montserrat-Regular.ttf") format("truetype"), url("../../../static/fonts/Montserrat-Regular.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../../static/fonts/Montserrat-Bold.eot");
+  src: local("☺"), url("../../../static/fonts/Montserrat-Bold.woff") format("woff"), url("../../../static/fonts/Montserrat-Bold.ttf") format("truetype"), url("../../../static/fonts/Montserrat-Bold.svg") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+*::before, *::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  font-size: 100%;
+  height: 100%;
+  line-height: 1;
+  width: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: normal;
+}
+
+
+body {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #222629;
+  color: #86c232;
+  margin: 0 0 50px 0;
+}
+
+.header__main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  padding: 0 25px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.navbar__item a {
+  color: #86c232;
+}
+
+.main {
+  color: #222629;
+  padding: 0 25px;
+}
+
+.main__title {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 50px 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 100;
+  margin: 0 0 20px 0;
+}
+
+.main__list-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+p .post-title{
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0 0 10px 0;
+}
+
+.content__flash {
+  display: inline-block;
+  border: solid 2px;
+  border-radius: 5px;
+  padding: 5px 25px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+
+.content__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.form__input, .form__input-username, .form__input-email, .form__input-pwd,
+.form__textarea, .form__button-submit, .form__input-post-name,
+.form__textarea-post-article, .form__input-post-url, .form__input_invalid {
+  border: solid 1px #6b6e70;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.form__input_invalid-feedback {
+  color: indianred;
+}
+
+
+.flash_success {
+  border-color: #86c232;
+}
+
+.flash_error, .form__input_invalid {
+  border-color: indianred;
+}
+
+.form__checkbox {
+  margin: 0 0 30px 0;
+}
+
+.form__button-submit {
+  background-color: #222629;
+  color: #86c232;
+  padding: 7px 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+hr {
+  display: block;
+  text-align: left;
+  size: 5px;
+  width: 300px;
+  clear: both;
+  border: 1px solid #bdbdbd;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile__ava img{
+  max-width: 250px;
+  max-height: 250px;
+  float: left;
+}
+
+.profile__load {
+}
+
+.form__button-submit {
+}
+
+.profile__panel {
+}

@@ -1,0 +1,416 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../static/fonts/Montserrat-Thin.eot");
+  src: local("☺"), url("../../static/fonts/Montserrat-Thin.woff") format("woff"), url("../../static/fonts/Montserrat-Thin.ttf") format("truetype"), url("../../static/fonts/Montserrat-Thin.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../static/fonts/Montserrat-Light.eot");
+  src: local("☺"), url("../../static/fonts/Montserrat-Light.woff") format("woff"), url("../../static/fonts/Montserrat-Light.ttf") format("truetype"), url("../../static/fonts/Montserrat-Light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../static/fonts/Montserrat-Regular.eot");
+  src: local("☺"), url("../../static/fonts/Montserrat-Regular.woff") format("woff"), url("../../static/fonts/Montserrat-Regular.ttf") format("truetype"), url("../../static/fonts/Montserrat-Regular.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../static/fonts/Montserrat-Bold.eot");
+  src: local("☺"), url("../../static/fonts/Montserrat-Bold.woff") format("woff"), url("../../static/fonts/Montserrat-Bold.ttf") format("truetype"), url("../../static/fonts/Montserrat-Bold.svg") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+*::before, *::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  font-size: 100%;
+  height: 100%;
+  line-height: 1;
+  width: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: normal;
+}
+
+body {
+  background-color: #2c3531;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #116466;
+  box-shadow: 0 0.5em 1em darkslategrey;
+}
+
+.header__main {
+  height: 65px;
+}
+
+.header__main, .navbar__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo, .navbar__item {
+  color: #d1e8e2;
+}
+
+.logo {
+  letter-spacing: -8px;
+}
+
+span.logo_thin, span.logo_fat {
+  font-size: 32px;
+}
+
+.logo_thin, .title_thin {
+  font-weight: 300;
+}
+
+.logo_fat, .title_fat {
+  font-weight: 700;
+}
+
+.navbar__list {
+  min-width: 250px;
+}
+
+.navbar__item {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.content__main {
+  position: relative;
+  max-width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10% 0 0 0;
+}
+
+.content__description, .content__subtitle, .contentMP__title,
+.contentMP__description, .text__ApplyCSV {
+  color: #d1e8e2;
+}
+
+.content__description {
+  font-size: 24px;
+  font-weight: 100;
+  flex: 0 1 25%;
+  line-height: 1.1;
+}
+
+.content__line {
+  width: 150px;
+  height: 3px;
+  background-color: #6BD3AB;
+  border-radius: 25px;
+}
+
+.content__title {
+  color: #6BD3AB;
+  font-size: 72px;
+  flex: 0 1 25%;
+  margin-left: -8px;
+  text-shadow: 0 0 2em #d1e8e2, 0 0 0.2em #116466, 0 0 0.2em #d9b08c;
+}
+
+.content__subtitle {
+  flex: 0 1 25%;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+a.content_button {
+  color: #d1e8e2;
+  font-size: 30px;
+  font-weight: 700;
+  background-color: rgba(217, 176, 140, 0.3);
+  border: solid 0.2px #6BD3AB;
+  padding: 10px 50px;
+  position: relative;
+  align-self: flex-start;
+}
+
+.contentMP__main {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3% 0 0 0;
+}
+
+.contentMP__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contentMP__form {
+  margin: 0 35px 0 0;
+}
+
+.contentMP__title {
+  flex: 0 1 25%;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.contentMP__description {
+  margin: 0 0 50px 0;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Montserrat", serif;
+}
+
+.inputBox {
+  position: relative;
+  width: 250px;
+  margin: 0 0 25px 0;
+}
+
+.inputBox input {
+  width: 100%;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: 1px solid #116466;
+  background-color: #2c3531;
+  outline: none;
+  color: #d1e8e2;
+  transition: 0.5s;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+  padding: 12px 15px;
+  pointer-events: none;
+  color: #d1e8e2;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.inputBox input:valid, .inputBox input:focus {
+  border: 1px solid #6BD3AB;
+}
+
+.inputBox input:valid ~ span, .inputBox input:focus ~ span {
+  color: #6BD3AB;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 12px;
+  padding: 0 7px;
+  background-color: #2c3531;
+  border-left: 1px solid #6BD3AB;
+  border-right: 1px solid #6BD3AB;
+}
+
+.text__ApplyCSV {
+  margin: 0 0 15px 0;
+}
+
+.input__ApplyCSV {
+  margin: 0 0 25px 0;
+}
+
+#ApplyCSV {
+  display: none;
+}
+
+#ApplyCSV + .input__ApplyCSV, #ApplyCSV + .input__ApplyCSV::before, #ApplyCSV + .input__ApplyCSV::after {
+  transition: all 0.3s;
+}
+
+#ApplyCSV + .input__ApplyCSV {
+  display: inline-block;
+  position: relative;
+  width: 70px;
+  height: 35px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#ApplyCSV + .input__ApplyCSV::before {
+  display: block;
+  content: attr(data-offlabel);
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  color: #2c3531;
+  font-family: "Montserrat", serif;
+  font-size: 14px;
+}
+
+#ApplyCSV + .input__ApplyCSV::after {
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+}
+
+#ApplyCSV:checked + .input__ApplyCSV::before {
+  content: attr(data-onlabel);
+  left: 14px;
+  right: auto;
+  color: #2c3531;
+}
+
+#ApplyCSV:checked + .input__ApplyCSV::after {
+  left: 36px;
+  background-color: #fff;
+}
+
+#ApplyCSV + .input__ApplyCSV {
+  background-color: #ccc;
+}
+
+#ApplyCSV:checked + .input__ApplyCSV {
+  background-color: #d9b08c;
+}
+
+#ApplyCSV:checked + .input__ApplyCSV::before {
+  color: #2c3531;
+}
+
+.TakeCSV__wrapper {
+  display: none;
+}
+
+input:checked ~ .toggle {
+  display: block;
+}
+
+.TakeCSV__wrapper, .contentMP__button-wrapper {
+  position: relative;
+  width: 150px;
+  text-align: center;
+  margin: 0 0 60px 0;
+}
+
+.TakeCSV__wrapper label.input__TakeCSV_label {
+  position: relative;
+  z-index: -1;
+  display: inline-block;
+  width: 100%;
+  background: #d9b08c;
+  color: #2c3531;
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#TakeCSV {
+  display: inline-block;
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 50px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.contentMP__button {
+  display: inline-block;
+  width: 100%;
+  background: #d9b08c;
+  color: #2c3531;
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.output_field {
+  background-color: #d9b08c;
+  min-width: 250px;
+  min-height: 300px;
+  flex: 0 1 100%;
+  padding: 0 0 0 25px;
+}
+
+.header__main, .content__main, .contentMP__main {
+  font-family: "Montserrat", serif;
+}

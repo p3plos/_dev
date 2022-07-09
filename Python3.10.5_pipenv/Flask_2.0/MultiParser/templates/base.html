@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="{{ url_for("static", filename="css/styles.css") }}">
+  <link rel="stylesheet" media="all" href="{{ url_for("static", filename="css/media.css") }}">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <main class="wrapper">
+    {% block header %}
+      {% include "header.html" %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+      {% include "footer.html" %}
+    {% endblock %}
+  </main>
+</body>
+<!-- Скрипт ниже для автообновления в браузере. При деплое нужно удалить
+<script>
+    let blurred = false; window.onblur = function () { blurred = true; };
+    window.onfocus = function () { blurred && (location.reload()); };
+</script> -->
+</html>

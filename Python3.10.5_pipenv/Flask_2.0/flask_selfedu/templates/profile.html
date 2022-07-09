@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+
+  {% for category, flash in get_flashed_messages(True) %}
+  <div class="content__flash flash_{{ category }}">{{ flash }}</div>
+  {% endfor %}
+
+  <div class="content__profile profile">
+    <div class="profile__ava"><img src="{{ url_for("user_ava") }}" alt="profile avatar"></div>
+    <div class="profile__load">
+      <form action="{{ url_for("upload") }}" method="POST" enctype="multipart/form-data">
+        <label for="file"></label>
+        <input type="file" name="file" id="file" class="form__button-upload">
+        <input type="submit" value="Загрузить" class="form__button-submit">
+      </form>
+    </div>
+    <div class="profile__panel">
+      <ul>
+        <li>Имя: {{ current_user.get_name() }}</li>
+        <li>Email: {{ current_user.get_email() }}</li>
+      </ul>
+    </div>
+    <hr>
+      <a href="{{ url_for("logout") }}">Выйти из профиля</a>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title BlankProject
+    meta charset='UTF-8'
+    meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+
+  body
+
+    include _header.slim
+
+    p Hello Slim
+
+    include _footer.slim
+
+  javascript:
+      let blurred = false; window.onblur = function () { blurred = true; };
+      window.onfocus = function () { blurred && (location.reload()); };

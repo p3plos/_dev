@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+      <section class="contentMP">
+        <div class="container">
+          <div class="contentMP__main">
+            <h1 class="contentMP__title">Консоль управления МультиПарсером</h1>
+            <p class="contentMP__description"><pre class="contentMP__description">{{ description }}</pre></p>
+            <div class="contentMP__row">
+              <form action="#" method="POST" class="contentMP__form form">
+                <div class="form__input inputBox">
+                  <label for="query"></label>
+                  <input type="text" name="query" id="query" required="required" value="">
+                  <span>Введите запрос</span>
+                </div>
+                <div>
+                  <p class="text__ApplyCSV">Использовать CSV файл</p>
+                  <input type="checkbox" name="ApplyCSV" id="ApplyCSV">
+                  <label for="ApplyCSV" data-onlabel="Да" data-offlabel="Нет" class="contentMP__input input__ApplyCSV"></label>
+
+                  <div class="TakeCSV__wrapper toggle">
+                    <input type="file" name="TakeCSV" id="TakeCSV" class="input__TakeCSV">
+                    <label for="TakeCSV" class="contentMP__input input__TakeCSV_label">Выбирите файл</label>
+                  </div>
+                </div>
+                <div class="contentMP__button-wrapper">
+                  <button type="submit" class="contentMP__button">Спарсить</button>
+                </div>
+              </form>
+              <div class="contentMP__output_filed output_field">
+                <pre>
+                  {% autoescape true %}
+                    <p>{{ logo }}</p>
+                    <br>
+                  {% endautoescape %}
+                </pre>
+                {% for message in get_flashed_messages() %}
+                <p>{{ message }}</p>
+                <br>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}

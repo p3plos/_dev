@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+
+  {% for category, flash in get_flashed_messages(True) %}
+  <div class="content__flash flash_{{ category }}">{{ flash }}</div>
+  {% endfor %}
+
+  <form action="/register" method="post" class="content__form form">
+    {{ form.hidden_tag() }}
+
+    {% for field in form if field.name not in ["csrf_token", "submit"] %}
+        {{ field.label() }}
+        {% if field.errors %}
+            <span class="form__input_invalid-feedback">
+              {% for e in field.errors %}
+                  {{ e }}
+              {% endfor %}
+            </span>
+            {{ field(class="form__input_invalid") }}
+re            {{ field(class="form__input") }}
+        {% endif %}
+    {% endfor %}
+    <!--
+    <label for="username">Имя: </label>
+    <input type="text" name="username" value="" required id="username" class="form__input-username">
+    <label for="email">Email: </label>
+    <input type="email" name="email" value="" required id="email" class="form__input-email">
+    <label for="pwd">Пароль: </label>
+    <input type="password" name="pwd" value="" required id="pwd" class="form__input-pwd">
+    <label for="pwd_repeat">Повторите пароль: </label>
+    <input type="password" name="pwd_repeat" value="" required id="pwd_repeat" class="form__input-pwd"> -->
+    <input type="submit" value="Зарегистрироваться" class="form__button-submit">
+
+    <hr>
+    <p><a href="{{ url_for("login") }}">Войти</a></p>
+  </form>
+
+{% endblock %}

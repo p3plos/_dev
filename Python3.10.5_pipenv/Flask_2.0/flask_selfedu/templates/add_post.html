@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+
+  {% for category, flash in get_flashed_messages(True) %}
+  <div class="content__flash flash_{{ category }}">{{ flash }}</div>
+  {% endfor %}
+
+  <form action="{{ url_for('add_post') }}" method="post" class="content__form form">
+    <label for="post-name">Название статьи: </label>
+    <input type="text" name="post-name" value="" id="post-name" class="form__input-post-name" required>
+    <label for="post-url">URL статьи: </label>
+    <input type="text" name="post-url" value="" id="post-url" class="form__input-post-url" required>
+    <label for="post-article">Текст статьи: </label>
+    <textarea name="post-article" id="post-article" cols="40" rows="7" class="form__textarea-post-article"></textarea>
+    <input type="submit" value="Добавить" class="form__button-submit">
+  </form>
+
+{% endblock %}
