@@ -97,7 +97,8 @@ body {
   font-family: Montserrat, sans-serif;
   font-weight: 400;
   font-size: 16px;
-  background: linear-gradient(#4da0a8, #041517);
+  background: #4da0a8;
+  box-shadow: inset 0.3rem 0.3rem 0.63rem #041517, inset -0.3rem -0.3rem 0.6rem #3a6665;
 }
 .wrapper {
   display: flex;
@@ -108,6 +109,7 @@ body {
   padding: 0 20px;
   margin: 0 auto;
 }
+/* Header *****************/
 .header {
   display: flex;
   flex-direction: row;
@@ -125,38 +127,42 @@ body {
 .logo_fat {
   font-weight: 600;
 }
-.header__btn {
+.btn {
   grid-column: 0.5;
   grid-row: 0.8333333333;
-  color: #a3eaf0;
-  font-weight: 600;
-}
-.btn {
-  width: 100px;
-  height: 40px;
   border-radius: 5px;
-  box-shadow: 0.05rem 0.05rem 0.2rem #041517, -0.05rem -0.05rem 0.2rem #498180;
-  background-color: #63b8bf;
   justify-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: 0.3s ease;
+  font-size: 1.03rem;
+  width: 100px;
+  height: 40px;
+  box-shadow: 0.05rem 0.05rem 0.2rem #041517, -0.05rem -0.05rem 0.2rem #498180;
+  background-color: #63b8bf;
   border: solid 1px #11565e;
+  color: #a3eaf0;
+}
+
+.header__btn {
+  font-weight: 600;
 }
 .btn:hover {
   box-shadow: none;
   border: solid 1px #11565e;
   background-color: #4da0a8;
   color: #71d1d9;
+  font-size: 1rem;
 }
 .btn:active {
   box-shadow: inset 0.05rem 0.05rem 0.02rem #041517, inset -0.05rem -0.05rem 0.02rem #498180;
   background-color: #3f828a;
   color: #4da0a8;
+  font-size: .97rem;
 }
-.logo_embossed, .btn_embossed {
+.logo_embossed, .btn_embossed, .search-box__title, .create-box__title, .preview__bool {
 	text-shadow:
 		0.025rem 0.05rem 0.05rem #041517,
 		-0.025rem -0.05rem 0.05rem #498180;
@@ -176,3 +182,104 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+/**************************/
+/* Main content ***********/
+.main__content {
+}
+.content__preview {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 250px;
+  padding: 0 75px;
+}
+.search-box__title, .create-box__title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #71d1d9;
+  margin: 0 0 25px 0;
+  align-self: center;
+}
+.preview__search, .create-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-box__search {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search__input {
+  min-width: 125px;
+  min-height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: 400;
+  padding-left: 3.8rem;
+  box-shadow: inset 0.1rem 0.1rem 0.3rem #041517, inset -0.1rem -0.1rem 0.3rem #498180;
+  background: #3f828a;
+  font-family: inherit;
+  color: #54afb8;
+  text-shadow:
+		0.025rem 0.05rem 0.05rem #041517,
+		-0.025rem -0.05rem 0.05rem #498180;
+}
+
+.search__input::placeholder {
+  font-weight: 600;
+  color: #306369;
+  text-shadow:
+		-0.025rem -0.05rem 0.05rem black,
+		0.025rem 0.05rem 0.05rem #498180;
+}
+.search__input:focus {
+  outline: none;
+}
+.search__input:focus + .search__icon {
+  color: #a3eaf0;
+}
+.search__icon {
+  height: 30px;
+  position: absolute;
+  font-size: 30px;
+  padding: 0 1rem;
+  display: flex;
+  color: #306369;
+  transition: 0.3s ease;
+  text-shadow:
+		-0.025rem -0.05rem 0.05rem black,
+		0.025rem 0.05rem 0.05rem #498180;
+}
+.preview__y-line {
+  display: block;
+  position: relative;
+  width: .005rem;
+  height: 120px;
+  margin: 30px 0 0 0;
+  background-color: #498180
+
+}
+.preview__bool {
+  position: absolute;
+  top: 50px;
+  left: -1.49rem;
+  color: #71d1d9;
+  font-size: 18px;
+}
+.preview__create-box {
+}
+.create-box__btn {
+  font-weight: 600;
+  width: 125px;
+}
+.create-box__title {
+}
+
+
+
+/**************************/

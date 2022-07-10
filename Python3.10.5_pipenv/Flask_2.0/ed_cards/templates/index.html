@@ -2,5 +2,26 @@
 
 {% block content %}
   {{ super() }}
-
+    <section class="main__content content">
+      <div class="container">
+        <div class="content__preview preview">
+          <div class="preview__search search-box">
+            <h2 class="search-box__title unselectable">Найти карточки для изучения</h2>
+            <div class="search-box__search search">
+              <label>
+                <input type="text" class="search__input" placeholder="Поиск...">
+              </label>
+              <div class="search__icon">
+                 <i class="fa fa-search"></i>
+              </div>
+            </div>
+          </div>
+          <span class="preview__y-line"><span class="preview__bool unselectable">либо</span></span>
+          <div class="preview__create-box create-box">
+            <h2 class="create-box__title unselectable">Создай свой набор карточек</h2>
+            <div class="create-box__btn btn btn_embossed unselectable"><p>Создать</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
 {% endblock %}
