@@ -10,7 +10,7 @@ fa = FontAwesome(app)
 
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://l3ns:RDddy52postgres' \
-                                        '@localhost/test'
+                                        '@localhost/ed_cards'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
@@ -19,7 +19,8 @@ db = SQLAlchemy(app)
 
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(25), unique=True)
+    email = db.Column(db.String(50), unique=True)
+    passwd = db.Column(db.String(500), unique=True)
     create_date = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
