@@ -10,7 +10,6 @@ lxml = "*"
 tqdm = "*"
 selenium = "*"
 webdriver-manager = "*"
-pandas = "*"
 
 [dev-packages]
 

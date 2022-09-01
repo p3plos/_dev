@@ -23,6 +23,8 @@ with open('img_links.txt', 'r') as file:
 # из файла "img_links.txt"
 img_link = lines[0]
 
+print(img_link)
+
 # Открывает файл "img_links.txt" на запись и стирает первую строку
 with open('img_links.txt', 'w') as file:
     file.writelines(lines[1:])
