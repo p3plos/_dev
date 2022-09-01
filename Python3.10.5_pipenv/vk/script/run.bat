@@ -1,0 +1,4 @@
+@echo 
+
+
+start script.py
