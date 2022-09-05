@@ -8,7 +8,7 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from tqdm import tqdm
 
-scroll_number = 2
+scroll_number = 50
 sleep_timer = random.randrange(1, 5)
 
 var = 'auto coupe'
@@ -33,7 +33,8 @@ def get_img_links(url):
 
             for link in tqdm(soup.find_all('img'), desc='[+] Links found and added'):
                 img_link = link.get('src').replace('/236x/', '/736x/')
-                img_link_list.append(img_link)
+                if img_link not in img_link_list:
+                    img_link_list.append(img_link)
             time.sleep(sleep_timer)
 
         with open(f'img_links.txt', "w") as file:
