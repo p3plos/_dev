@@ -16,8 +16,8 @@ URL = f'https://ru.pinterest.com/search/pins/?q={var}'
 
 
 def get_img_links(url):
-    driver = webdriver.Chrome(executable_path='/home/l3ns/_dev/Python3.10.5_pipenv/img_picker/'
-                                              'chromedriver/chromedriver')
+    driver = webdriver.Chrome(executable_path='/home/l3ns/_dev/Python3.10.5_pipenv/parsing/'
+                                              'selenium/img_picker/chromedriver/chromedriver')
 
     try:
         print('[+] Opening a browser with the specified url')
