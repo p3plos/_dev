@@ -41,7 +41,7 @@ IMG = os.listdir(images_path)[0]
 
 TOKEN = os.getenv('VK_TOKEN')
 USER_ID = os.getenv('USER_ID')
-GROUP_ID = 181059371
+GROUP_ID = 165123312
 METHOD = ['wall.post',
           'wall.edit',
           'photos.getWallUploadServer',
@@ -101,7 +101,7 @@ IMG_ID = save_img_on_server_and_get_id(result)
 
 # Функция, которая постит фотографию
 def post_img():
-    message = '@club181059371(◣﹏◢)'
+    message = f'@club{GROUP_ID}(◣﹏◢)'
 
     params = f'owner_id=-{GROUP_ID}&' \
              f'message={message}&' \
@@ -120,5 +120,9 @@ def post_img():
     send_msg(f'------------------------------')
 
 
-if __name__ == '__main__':
+def main():
     post_img()
+
+
+if __name__ == '__main__':
+    main()
