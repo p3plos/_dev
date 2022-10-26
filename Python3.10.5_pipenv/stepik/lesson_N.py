@@ -10,5 +10,3 @@
 #
 #
 # print(likes(['Alex', 'Jacob']))
-
-
